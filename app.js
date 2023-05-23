@@ -1,10 +1,15 @@
-import express from 'express'
+const express = require('express')
 
 
 const app = express()
 
 app.get('/users', (req, res) => {
-    res.sendStatus(200)
+    const json = {
+        id: 1,
+        username: "Tokaymen",
+        email: "tokay@gmail.com"
+    }
+    res.send(json).statusCode(200)
 })
 
-export default app
+module.exports = app
